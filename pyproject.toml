@@ -17,6 +17,7 @@ typer = "^0.12.5"
 [tool.poetry.group.dev.dependencies]
 mkdocs = "^1.6.1"
 mkdocs-material = "^9.5.35"
+pytest = "^8.3.3"
 
 [build-system]
 requires = ["poetry-core"]
