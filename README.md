@@ -1,11 +1,11 @@
 # device_certificate_report
 
-![Banner Image](path/to/your/banner.svg)
+![Banner Image](device_certificate_report/assets/logo.png)
 
-[![Build Status](https://github.com/yourusername/device_certificate_report/actions/workflows/ci.yml/badge.svg)](https://github.com/yourusername/device_certificate_report/actions/workflows/ci.yml)
+[![Build Status](https://github.com/cdot65/device-certificate-report/actions/workflows/ci.yml/badge.svg)](https://github.com/cdot65/device-certificate-report/actions/workflows/ci.yml)
 [![PyPI version](https://badge.fury.io/py/device_certificate_report.svg)](https://badge.fury.io/py/device_certificate_report)
 [![Python versions](https://img.shields.io/pypi/pyversions/device_certificate_report.svg)](https://pypi.org/project/device_certificate_report/)
-[![License](https://img.shields.io/github/license/yourusername/device_certificate_report.svg)](https://github.com/yourusername/device_certificate_report/blob/main/LICENSE)
+[![License](https://img.shields.io/github/license/cdot65/device-certificate-report.svg)](https://github.com/cdot65/device-certificate-report/blob/main/LICENSE)
 
 A tool to generate device certificate reports from PAN-OS devices.
 
