@@ -1,0 +1,23 @@
+[tool.poetry]
+name = "device-certificate-report"
+version = "0.1.0"
+description = "A tool to generate a report of potential PAN-OS device certificate issues."
+authors = ["Calvin Remsburg <cremsburg.dev@gmail.com>"]
+license = "Apache 2.0"
+readme = "README.md"
+packages = [{include = "device_certificate_report"}]
+
+[tool.poetry.dependencies]
+python = "^3.12"
+pan-os-python = "^1.12.1"
+dynaconf = "^3.2.6"
+typer = "^0.12.5"
+
+
+[tool.poetry.group.dev.dependencies]
+mkdocs = "^1.6.1"
+mkdocs-material = "^9.5.35"
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
