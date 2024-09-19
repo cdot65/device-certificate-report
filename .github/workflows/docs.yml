@@ -26,7 +26,7 @@ jobs:
         uses: peaceiris/actions-gh-pages@v3
         with:
           personal_token: ${{ secrets.GITHUB_TOKEN }}
-          external_repository: cdot65/device_certificate_report
+          external_repository: cdot65/device-certificate-report
           publish_dir: ./site
           keep_files: false
       - name: Build Docs
