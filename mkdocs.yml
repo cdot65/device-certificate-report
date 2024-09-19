@@ -1,4 +1,4 @@
-site_name: device_certificate_report Documentation
+site_name: device-certificate-report Documentation
 site_description: Report potential issues with Device Certificates on Palo Alto Networks firewalls
 site_url: https://cdot65.github.io/device-certificate-report/
 repo_name: cdot65/device-certificate-report
