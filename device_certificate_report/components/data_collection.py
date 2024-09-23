@@ -29,13 +29,31 @@ def process_csv_file(csv_file: str) -> List[DeviceInfo]:
         csv_reader = csv.DictReader(file)
         for row in csv_reader:
             # Fields that might have multiple entries
-            device_names = [name.strip() for name in row.get("Device Name", "").split(";")]
-            serial_numbers = [sn.strip() for sn in row.get("IP Address Serial Number", "").split(";")]
-            ipv4_addresses = [ip.strip() for ip in row.get("IP Address IPv4", "").split(";")]
-            device_states = [state.strip() for state in row.get("Status Device State", "").split(";")]
-            device_certificates = [cert.strip() for cert in row.get("Status Device Certificate", "").split(";")]
-            device_certificate_expiry_dates = [date.strip() for date in row.get("Status Device Certificate Expiry Date", "").split(";")]
-            globalprotect_clients = [gp.strip() for gp in row.get("GlobalProtect Client", "").split(";")]
+            device_names = [
+                name.strip() for name in row.get("Device Name", "").split(";")
+            ]
+            serial_numbers = [
+                sn.strip() for sn in row.get("IP Address Serial Number", "").split(";")
+            ]
+            ipv4_addresses = [
+                ip.strip() for ip in row.get("IP Address IPv4", "").split(";")
+            ]
+            device_states = [
+                state.strip() for state in row.get("Status Device State", "").split(";")
+            ]
+            device_certificates = [
+                cert.strip()
+                for cert in row.get("Status Device Certificate", "").split(";")
+            ]
+            device_certificate_expiry_dates = [
+                date.strip()
+                for date in row.get("Status Device Certificate Expiry Date", "").split(
+                    ";"
+                )
+            ]
+            globalprotect_clients = [
+                gp.strip() for gp in row.get("GlobalProtect Client", "").split(";")
+            ]
 
             # Determine the number of devices in this row
             num_devices = len(device_names)
@@ -50,13 +68,21 @@ def process_csv_file(csv_file: str) -> List[DeviceInfo]:
                     device_name=device_names[i] if i < len(device_names) else None,
                     virtual_system=virtual_system or None,
                     model=model or None,
-                    serial_number=serial_numbers[i] if i < len(serial_numbers) else None,
+                    serial_number=serial_numbers[i]
+                    if i < len(serial_numbers)
+                    else None,
                     ipv4_address=ipv4_addresses[i] if i < len(ipv4_addresses) else None,
                     device_state=device_states[i] if i < len(device_states) else None,
-                    device_certificate=device_certificates[i] if i < len(device_certificates) else None,
-                    device_certificate_expiry_date=device_certificate_expiry_dates[i] if i < len(device_certificate_expiry_dates) else None,
+                    device_certificate=device_certificates[i]
+                    if i < len(device_certificates)
+                    else None,
+                    device_certificate_expiry_date=device_certificate_expiry_dates[i]
+                    if i < len(device_certificate_expiry_dates)
+                    else None,
                     software_version=software_version or None,
-                    globalprotect_client=globalprotect_clients[i] if i < len(globalprotect_clients) else None,
+                    globalprotect_client=globalprotect_clients[i]
+                    if i < len(globalprotect_clients) and globalprotect_clients[i] != "0.0.0"
+                    else None,
                 )
                 devices.append(device)
 

@@ -1,3 +1,5 @@
+# device_certificate_report/main.py
+
 """
 main.py: Generate Device Certificate Reports from PAN-OS Devices
 
@@ -52,6 +54,7 @@ from device_certificate_report.components.data_collection import (
 )
 from device_certificate_report.components.report_generation import generate_report
 from device_certificate_report.components.utils import clean_csv
+from device_certificate_report.filters import filter_devices_by_model, split_devices_by_version
 
 # Initialize Typer app
 app = typer.Typer(help="Generate Device Certificate Reports from PAN-OS Devices")
@@ -107,9 +110,27 @@ def csv(
         typer.echo(f"Processing cleaned CSV file: {cleaned_csv_file}")
         devices = process_csv_file(str(cleaned_csv_file))
 
-        import ipdb; ipdb.set_trace()
+        # Now, filter devices by model
+        affected_devices, unaffected_devices = filter_devices_by_model(devices)
+
+        # For affected devices, split by version
+        no_upgrade_required, upgrade_required = split_devices_by_version(affected_devices)
+
+        # Collect devices with GlobalProtect clients
+        devices_with_globalprotect = [device for device in devices if device.globalprotect_client and device.globalprotect_client != "0"]
+
+        # Collect devices with certificate status and expiry
+        devices_with_certificates = [device for device in devices if device.device_certificate and device.device_certificate_expiry_date]
+
         # Generate the report
-        generate_report(devices, output_file)
+        generate_report(
+            unaffected_devices=unaffected_devices,
+            no_upgrade_required=no_upgrade_required,
+            upgrade_required=upgrade_required,
+            devices_with_globalprotect=devices_with_globalprotect,
+            devices_with_certificates=devices_with_certificates,
+            output_file=output_file,
+        )
         typer.echo(f"Report generated at {output_file}")
     except Exception as e:
         logger.error(f"An error occurred while processing the CSV file: {e}")
@@ -167,7 +188,28 @@ def panorama(
     try:
         panorama = Panorama(hostname, username, password)
         devices = collect_data_from_panorama(panorama)
-        generate_report(devices, output_file)
+
+        # Now, filter devices by model
+        affected_devices, unaffected_devices = filter_devices_by_model(devices)
+
+        # For affected devices, split by version
+        no_upgrade_required, upgrade_required = split_devices_by_version(affected_devices)
+
+        # Collect devices with GlobalProtect clients
+        devices_with_globalprotect = [device for device in devices if device.globalprotect_client and device.globalprotect_client != "0"]
+
+        # Collect devices with certificate status and expiry
+        devices_with_certificates = [device for device in devices if device.device_certificate and device.device_certificate_expiry_date]
+
+        # Generate the report
+        generate_report(
+            unaffected_devices=unaffected_devices,
+            no_upgrade_required=no_upgrade_required,
+            upgrade_required=upgrade_required,
+            devices_with_globalprotect=devices_with_globalprotect,
+            devices_with_certificates=devices_with_certificates,
+            output_file=output_file,
+        )
         typer.echo(f"Report generated at {output_file}")
     except Exception as e:
         logger.error(f"Failed to process Panorama: {e}")
@@ -224,7 +266,32 @@ def firewall(
     try:
         firewall = Firewall(hostname, username, password)
         device = collect_data_from_firewall(firewall)
-        generate_report([device], output_file)
+
+        # Now, filter device by model
+        affected_devices, unaffected_devices = filter_devices_by_model([device])
+
+        # For affected devices, split by version
+        if affected_devices:
+            no_upgrade_required, upgrade_required = split_devices_by_version(affected_devices)
+        else:
+            no_upgrade_required = []
+            upgrade_required = []
+
+        # Collect devices with GlobalProtect clients
+        devices_with_globalprotect = [device] if device.globalprotect_client and device.globalprotect_client != "0" else []
+
+        # Collect devices with certificate status and expiry
+        devices_with_certificates = [device] if device.device_certificate and device.device_certificate_expiry_date else []
+
+        # Generate the report
+        generate_report(
+            unaffected_devices=unaffected_devices,
+            no_upgrade_required=no_upgrade_required,
+            upgrade_required=upgrade_required,
+            devices_with_globalprotect=devices_with_globalprotect,
+            devices_with_certificates=devices_with_certificates,
+            output_file=output_file,
+        )
         typer.echo(f"Report generated at {output_file}")
     except Exception as e:
         logger.error(f"Failed to process Firewall: {e}")
