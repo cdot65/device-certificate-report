@@ -28,4 +28,4 @@ requires = ["poetry-core"]
 build-backend = "poetry.core.masonry.api"
 
 [tool.poetry.scripts]
-device_certificate_report = "device_certificate_report.main:app"
+device-certificate-report = "device_certificate_report.main:app"
