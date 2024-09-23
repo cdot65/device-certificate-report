@@ -27,8 +27,30 @@ pip install device_certificate_report
 
 ## Usage
 
+The `device_certificate_report` utility provides three subcommands:
+
+### CSV Subcommand
+
+Process a CSV file to generate the report.
+
 ```bash
-device_certificate_report --help
+device_certificate_report csv --csv-file panorama.csv --output-file report.pdf
+```
+
+### Panorama Subcommand
+
+Connect to a Panorama appliance and generate the report from connected firewalls.
+
+```bash
+device_certificate_report panorama --hostname <panorama_ip> --username <user> --password <password> --output-file report.pdf
+```
+
+### Firewall Subcommand
+
+Connect to a single Firewall appliance and generate the report.
+
+```bash
+device_certificate_report firewall --hostname <firewall_ip> --username <user> --password <password> --output-file report.pdf
 ```
 
 *Examples will be provided later on.*
