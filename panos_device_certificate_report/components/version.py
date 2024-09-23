@@ -1,4 +1,4 @@
-# device_certificate_report/components/version.py
+# panos_device_certificate_report/components/version.py
 
 import re
 

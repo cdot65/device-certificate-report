@@ -1,6 +1,6 @@
 # PAN-OS Device Certificate Report
 
-![Banner Image](device_certificate_report/assets/logo.svg)
+![Banner Image](panos_device_certificate_report/assets/logo.svg)
 
 [![Build Status](https://github.com/cdot65/device-certificate-report/actions/workflows/ci.yml/badge.svg)](https://github.com/cdot65/device-certificate-report/actions/workflows/ci.yml)
 [![PyPI version](https://badge.fury.io/py/panos-device-certificate-report.svg)](https://badge.fury.io/py/panos-device-certificate-report)
@@ -64,16 +64,16 @@ panos-device-certificate-report csv --csv-file <path_to_csv_file> --output-file 
 ```bash
 $ panos-device-certificate-report csv                                                                                                                                                                                        ─╯
 CSV file path: panorama.csv
-Cleaned CSV file saved as: /Users/cdot/development/cdot65/device_certificate_report/cleaned.csv
-Processing cleaned CSV file: /Users/cdot/development/cdot65/device_certificate_report/cleaned.csv
-Report generated at device_certificate_report.pdf
+Cleaned CSV file saved as: /Users/cdot/development/cdot65/panos_device_certificate_report/cleaned.csv
+Processing cleaned CSV file: /Users/cdot/development/cdot65/panos_device_certificate_report/cleaned.csv
+Report generated at panos_device_certificate_report.pdf
 ```
 
 ```bash
-$ panos-device-certificate-report csv --csv-file panorama.csv --output-file device_certificate_report.pdf                                                                                                                    ─╯
-Cleaned CSV file saved as: /Users/cdot/development/cdot65/device_certificate_report/cleaned.csv
-Processing cleaned CSV file: /Users/cdot/development/cdot65/device_certificate_report/cleaned.csv
-Report generated at device_certificate_report.pdf
+$ panos-device-certificate-report csv --csv-file panorama.csv --output-file panos_device_certificate_report.pdf                                                                                                                    ─╯
+Cleaned CSV file saved as: /Users/cdot/development/cdot65/panos_device_certificate_report/cleaned.csv
+Processing cleaned CSV file: /Users/cdot/development/cdot65/panos_device_certificate_report/cleaned.csv
+Report generated at panos_device_certificate_report.pdf
 ```
 
 ### Panorama Subcommand
@@ -95,18 +95,18 @@ Panorama hostname or IP: panorama1.example.io
 Panorama username: admin
 Panorama password: 
 Connecting to Panorama at panorama1.example.io
-INFO:device_certificate_report.components.data_collection:Sending operational command to Panorama to retrieve all devices.
-INFO:device_certificate_report.components.data_collection:Parsing XML response from Panorama.
-INFO:device_certificate_report.components.data_collection:Found 14 devices connected to Panorama.
-Report generated at device_certificate_report.pdf
+INFO:panos_device_certificate_report.components.data_collection:Sending operational command to Panorama to retrieve all devices.
+INFO:panos_device_certificate_report.components.data_collection:Parsing XML response from Panorama.
+INFO:panos_device_certificate_report.components.data_collection:Found 14 devices connected to Panorama.
+Report generated at panos_device_certificate_report.pdf
 ```
 
 ```bash
 $ panos-device-certificate-report panorama --hostname panorama.example.io --username admin --password paloalto123 --output-file panorama_report.pdf                                                                      ─╯
 Connecting to Panorama at panorama1.example.io
-INFO:device_certificate_report.components.data_collection:Sending operational command to Panorama to retrieve all devices.
-INFO:device_certificate_report.components.data_collection:Parsing XML response from Panorama.
-INFO:device_certificate_report.components.data_collection:Found 14 devices connected to Panorama.
+INFO:panos_device_certificate_report.components.data_collection:Sending operational command to Panorama to retrieve all devices.
+INFO:panos_device_certificate_report.components.data_collection:Parsing XML response from Panorama.
+INFO:panos_device_certificate_report.components.data_collection:Found 14 devices connected to Panorama.
 Report generated at panorama_report.pdf
 ```
 
@@ -126,20 +126,20 @@ Firewall hostname or IP: austin-fw1.example.io
 Firewall username: admin
 Firewall password: 
 Connecting to Firewall at austin-fw1.example.io
-INFO:device_certificate_report.components.data_collection:Sending operational command to Firewall to retrieve system info.
-INFO:device_certificate_report.components.data_collection:Sending operational command to Firewall to retrieve device certificate status.
-INFO:device_certificate_report.components.data_collection:Parsing XML response from Firewall system info.
-INFO:device_certificate_report.components.data_collection:Parsing XML response from Firewall device certificate status.
+INFO:panos_device_certificate_report.components.data_collection:Sending operational command to Firewall to retrieve system info.
+INFO:panos_device_certificate_report.components.data_collection:Sending operational command to Firewall to retrieve device certificate status.
+INFO:panos_device_certificate_report.components.data_collection:Parsing XML response from Firewall system info.
+INFO:panos_device_certificate_report.components.data_collection:Parsing XML response from Firewall device certificate status.
 Report generated at austin-fw1.example.io.pdf
 ```
 
 ```bash
 $ panos-device-certificate-report firewall --hostname austin-fw1.example.io --username admin --password paloalto123 --output-file firewall.pdf                                                                            ─╯
 Connecting to Firewall at austin-fw1.example.io
-INFO:device_certificate_report.components.data_collection:Sending operational command to Firewall to retrieve system info.
-INFO:device_certificate_report.components.data_collection:Sending operational command to Firewall to retrieve device certificate status.
-INFO:device_certificate_report.components.data_collection:Parsing XML response from Firewall system info.
-INFO:device_certificate_report.components.data_collection:Parsing XML response from Firewall device certificate status.
+INFO:panos_device_certificate_report.components.data_collection:Sending operational command to Firewall to retrieve system info.
+INFO:panos_device_certificate_report.components.data_collection:Sending operational command to Firewall to retrieve device certificate status.
+INFO:panos_device_certificate_report.components.data_collection:Parsing XML response from Firewall system info.
+INFO:panos_device_certificate_report.components.data_collection:Parsing XML response from Firewall device certificate status.
 Report generated at firewall.pdf
 ```
 

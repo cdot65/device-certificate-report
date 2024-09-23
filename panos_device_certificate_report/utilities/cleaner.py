@@ -1,4 +1,4 @@
-# device_certificate_report/components/utils.py
+# panos_device_certificate_report/components/cleaner.py
 
 import re
 import csv

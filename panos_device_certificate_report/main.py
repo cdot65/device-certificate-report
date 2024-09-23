@@ -1,4 +1,4 @@
-# device_certificate_report/main.py
+# panos_device_certificate_report/main.py
 
 """
 main.py: Generate Device Certificate Reports from PAN-OS Devices
@@ -47,14 +47,14 @@ from panos.firewall import Firewall
 from panos.panorama import Panorama
 
 # Import components
-from device_certificate_report.components.data_collection import (
+from panos_device_certificate_report.components.data_collection import (
     process_csv_file,
     collect_data_from_panorama,
     collect_data_from_firewall,
 )
-from device_certificate_report.components.report_generation import generate_report
-from device_certificate_report.components.utils import clean_csv
-from device_certificate_report.components.filters import (
+from panos_device_certificate_report.utilities.pdf_generation import generate_report
+from panos_device_certificate_report.utilities.cleaner import clean_csv
+from panos_device_certificate_report.utilities.filters import (
     filter_devices_by_model,
     split_devices_by_version,
 )
@@ -87,7 +87,7 @@ def csv(
         prompt="CSV file path",
     ),
     output_file: Optional[str] = typer.Option(
-        "device_certificate_report.pdf",
+        "panos_device_certificate_report.pdf",
         "--output-file",
         "-o",
         help="Path to the output PDF report",
@@ -177,7 +177,7 @@ def panorama(
         hide_input=True,
     ),
     output_file: Optional[str] = typer.Option(
-        "device_certificate_report.pdf",
+        "panos_device_certificate_report.pdf",
         "--output-file",
         "-o",
         help="Path to the output PDF report",

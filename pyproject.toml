@@ -1,11 +1,11 @@
 [tool.poetry]
-name = "device_certificate_report"
+name = "panos_device_certificate_report"
 version = "0.1.0"
 description = "A tool to generate device certificate reports from PAN-OS devices."
 authors = ["Calvin Remsburg <cremsburg.dev@gmail.com>"]
 license = "Apache 2.0"
 readme = "README.md"
-packages = [{include = "device_certificate_report"}]
+packages = [{include = "panos_device_certificate_report"}]
 
 [tool.poetry.dependencies]
 python = "^3.12"
@@ -28,4 +28,4 @@ requires = ["poetry-core"]
 build-backend = "poetry.core.masonry.api"
 
 [tool.poetry.scripts]
-panos-device-certificate-report = "device_certificate_report.main:app"
+panos-device-certificate-report = "panos_device_certificate_report.main:app"
