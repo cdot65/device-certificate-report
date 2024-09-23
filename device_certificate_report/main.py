@@ -54,7 +54,10 @@ from device_certificate_report.components.data_collection import (
 )
 from device_certificate_report.components.report_generation import generate_report
 from device_certificate_report.components.utils import clean_csv
-from device_certificate_report.filters import filter_devices_by_model, split_devices_by_version
+from device_certificate_report.filters import (
+    filter_devices_by_model,
+    split_devices_by_version,
+)
 
 # Initialize Typer app
 app = typer.Typer(help="Generate Device Certificate Reports from PAN-OS Devices")
@@ -114,13 +117,23 @@ def csv(
         affected_devices, unaffected_devices = filter_devices_by_model(devices)
 
         # For affected devices, split by version
-        no_upgrade_required, upgrade_required = split_devices_by_version(affected_devices)
+        no_upgrade_required, upgrade_required = split_devices_by_version(
+            affected_devices
+        )
 
         # Collect devices with GlobalProtect clients
-        devices_with_globalprotect = [device for device in devices if device.globalprotect_client and device.globalprotect_client != "0"]
+        devices_with_globalprotect = [
+            device
+            for device in devices
+            if device.globalprotect_client and device.globalprotect_client != "0"
+        ]
 
         # Collect devices with certificate status and expiry
-        devices_with_certificates = [device for device in devices if device.device_certificate and device.device_certificate_expiry_date]
+        devices_with_certificates = [
+            device
+            for device in devices
+            if device.device_certificate and device.device_certificate_expiry_date
+        ]
 
         # Generate the report
         generate_report(
@@ -193,13 +206,23 @@ def panorama(
         affected_devices, unaffected_devices = filter_devices_by_model(devices)
 
         # For affected devices, split by version
-        no_upgrade_required, upgrade_required = split_devices_by_version(affected_devices)
+        no_upgrade_required, upgrade_required = split_devices_by_version(
+            affected_devices
+        )
 
         # Collect devices with GlobalProtect clients
-        devices_with_globalprotect = [device for device in devices if device.globalprotect_client and device.globalprotect_client != "0"]
+        devices_with_globalprotect = [
+            device
+            for device in devices
+            if device.globalprotect_client and device.globalprotect_client != "0"
+        ]
 
         # Collect devices with certificate status and expiry
-        devices_with_certificates = [device for device in devices if device.device_certificate and device.device_certificate_expiry_date]
+        devices_with_certificates = [
+            device
+            for device in devices
+            if device.device_certificate and device.device_certificate_expiry_date
+        ]
 
         # Generate the report
         generate_report(
@@ -242,7 +265,7 @@ def firewall(
         hide_input=True,
     ),
     output_file: Optional[str] = typer.Option(
-        "device_certificate_report.pdf",
+        "",
         "--output-file",
         "-o",
         help="Path to the output PDF report",
@@ -272,16 +295,26 @@ def firewall(
 
         # For affected devices, split by version
         if affected_devices:
-            no_upgrade_required, upgrade_required = split_devices_by_version(affected_devices)
+            no_upgrade_required, upgrade_required = split_devices_by_version(
+                affected_devices
+            )
         else:
             no_upgrade_required = []
             upgrade_required = []
 
         # Collect devices with GlobalProtect clients
-        devices_with_globalprotect = [device] if device.globalprotect_client and device.globalprotect_client != "0" else []
+        devices_with_globalprotect = (
+            [device]
+            if device.globalprotect_client and device.globalprotect_client != "0"
+            else []
+        )
 
         # Collect devices with certificate status and expiry
-        devices_with_certificates = [device] if device.device_certificate and device.device_certificate_expiry_date else []
+        devices_with_certificates = (
+            [device]
+            if device.device_certificate and device.device_certificate_expiry_date
+            else []
+        )
 
         # Generate the report
         generate_report(
@@ -290,9 +323,9 @@ def firewall(
             upgrade_required=upgrade_required,
             devices_with_globalprotect=devices_with_globalprotect,
             devices_with_certificates=devices_with_certificates,
-            output_file=output_file,
+            output_file=output_file if len(output_file) > 0 else f"{hostname}.pdf",
         )
-        typer.echo(f"Report generated at {output_file}")
+        typer.echo(f"Report generated at {output_file if len(output_file) > 0 else f'{hostname}.pdf'}")
     except Exception as e:
         logger.error(f"Failed to process Firewall: {e}")
         sys.exit(1)

@@ -35,7 +35,9 @@ def generate_report(
 
     # Optional: Include a logo if available
     try:
-        logo_path = pkg_resources.files("device_certificate_report.assets").joinpath("logo.png")
+        logo_path = pkg_resources.files("device_certificate_report.assets").joinpath(
+            "logo.png"
+        )
         img = Image(str(logo_path), width=71, height=51)
         img.hAlign = "LEFT"
         content.append(img)
@@ -63,7 +65,9 @@ def generate_report(
     content.append(Spacer(1, 20))
 
     # Function to create a table for a list of devices
-    def create_device_table(devices: List[DeviceInfo], headers: List[str], fields: List[str]) -> Table:
+    def create_device_table(
+        devices: List[DeviceInfo], headers: List[str], fields: List[str]
+    ) -> Table:
         table_data = [headers]
         for device in devices:
             row = [getattr(device, field) or "" for field in fields]
@@ -76,23 +80,30 @@ def generate_report(
 
         table = Table(table_data, colWidths=col_widths, repeatRows=1)
         # Apply styling
-        table_style = TableStyle([
-            ('BACKGROUND', (0, 0), (-1, 0), colors.HexColor("#F04E23")),
-            ('TEXTCOLOR', (0, 0), (-1, 0), colors.white),
-            ('ALIGN', (0, 0), (-1, -1), 'CENTER'),
-            ('FONTNAME', (0, 0), (-1, 0), 'Helvetica-Bold'),
-            ('BOTTOMPADDING', (0, 0), (-1, 0), 12),
-            ('GRID', (0, 0), (-1, -1), 0.5, colors.grey),
-        ])
+        table_style = TableStyle(
+            [
+                ("BACKGROUND", (0, 0), (-1, 0), colors.HexColor("#F04E23")),
+                ("TEXTCOLOR", (0, 0), (-1, 0), colors.white),
+                ("ALIGN", (0, 0), (-1, -1), "CENTER"),
+                ("FONTNAME", (0, 0), (-1, 0), "Helvetica-Bold"),
+                ("BOTTOMPADDING", (0, 0), (-1, 0), 12),
+                ("GRID", (0, 0), (-1, -1), 0.5, colors.grey),
+            ]
+        )
         # Alternate row colors
         for i in range(1, len(table_data)):
             bg_color = colors.whitesmoke if i % 2 == 0 else colors.white
-            table_style.add('BACKGROUND', (0, i), (-1, i), bg_color)
+            table_style.add("BACKGROUND", (0, i), (-1, i), bg_color)
         table.setStyle(table_style)
         return table
 
     # Unaffected Devices
-    content.append(Paragraph("Unaffected Models (already supports Device Certificates)", styles["Heading2"]))
+    content.append(
+        Paragraph(
+            "Unaffected Models (already supports Device Certificates)",
+            styles["Heading2"],
+        )
+    )
     content.append(Spacer(1, 12))
     if unaffected_devices:
         headers = ["Device Name", "Model", "Software Version"]
@@ -105,20 +116,26 @@ def generate_report(
         content.append(Spacer(1, 20))
 
     # Affected Devices - No Software Upgrade Required
-    content.append(Paragraph("Affected Models (No Software Upgrade Required)", styles["Heading2"]))
+    content.append(
+        Paragraph("Affected Models (No Software Upgrade Required)", styles["Heading2"])
+    )
     content.append(Spacer(1, 12))
     if no_upgrade_required:
         headers = ["Device Name", "Model", "Software Version"]
-        fields = ["device_name", "model",  "software_version"]
+        fields = ["device_name", "model", "software_version"]
         table = create_device_table(no_upgrade_required, headers, fields)
         content.append(table)
         content.append(Spacer(1, 20))
     else:
-        content.append(Paragraph("No affected devices that are up-to-date.", styles["BodyText"]))
+        content.append(
+            Paragraph("No affected devices that are up-to-date.", styles["BodyText"])
+        )
         content.append(Spacer(1, 20))
 
     # Affected Devices - Software Upgrade Required
-    content.append(Paragraph("Affected Models (Software Upgrade Required)", styles["Heading2"]))
+    content.append(
+        Paragraph("Affected Models (Software Upgrade Required)", styles["Heading2"])
+    )
     content.append(Spacer(1, 12))
     if upgrade_required:
         headers = [
@@ -137,7 +154,11 @@ def generate_report(
         content.append(table)
         content.append(Spacer(1, 20))
     else:
-        content.append(Paragraph("No affected devices that require software upgrade.", styles["BodyText"]))
+        content.append(
+            Paragraph(
+                "No affected devices that require software upgrade.", styles["BodyText"]
+            )
+        )
         content.append(Spacer(1, 20))
 
     # Devices with GlobalProtect Clients
@@ -150,20 +171,38 @@ def generate_report(
         content.append(table)
         content.append(Spacer(1, 20))
     else:
-        content.append(Paragraph("No devices with GlobalProtect clients.", styles["BodyText"]))
+        content.append(
+            Paragraph("No devices with GlobalProtect clients.", styles["BodyText"])
+        )
         content.append(Spacer(1, 20))
 
     # Device Certificate Status and Expiry
-    content.append(Paragraph("Device Certificate Status and Expiry", styles["Heading2"]))
+    content.append(
+        Paragraph("Device Certificate Status and Expiry", styles["Heading2"])
+    )
     content.append(Spacer(1, 12))
     if devices_with_certificates:
-        headers = ["Device Name", "Model", "Device Certificate Status", "Certificate Expiry Date"]
-        fields = ["device_name", "model", "device_certificate", "device_certificate_expiry_date"]
+        headers = [
+            "Device Name",
+            "Model",
+            "Device Certificate Status",
+            "Certificate Expiry Date",
+        ]
+        fields = [
+            "device_name",
+            "model",
+            "device_certificate",
+            "device_certificate_expiry_date",
+        ]
         table = create_device_table(devices_with_certificates, headers, fields)
         content.append(table)
         content.append(Spacer(1, 20))
     else:
-        content.append(Paragraph("No device certificate information available.", styles["BodyText"]))
+        content.append(
+            Paragraph(
+                "No device certificate information available.", styles["BodyText"]
+            )
+        )
         content.append(Spacer(1, 20))
 
     # Build the PDF

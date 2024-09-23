@@ -10,7 +10,6 @@ class DeviceInfo(BaseModel):
     """
 
     device_name: str
-    virtual_system: Optional[str]
     model: str
     serial_number: str
     ipv4_address: str
