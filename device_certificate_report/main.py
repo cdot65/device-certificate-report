@@ -25,9 +25,9 @@ Usage
 
 Run the CLI utility with one of the subcommands:
 
-    device_certificate_report csv
-    device_certificate_report panorama --hostname <panorama_ip> --username <user> --password <password>
-    device_certificate_report firewall --hostname <firewall_ip> --username <user> --password <password>
+    panos-device-certificate-report csv
+    panos-device-certificate-report panorama --hostname <panorama_ip> --username <user> --password <password>
+    panos-device-certificate-report firewall --hostname <firewall_ip> --username <user> --password <password>
 
 Notes
 -----
@@ -54,7 +54,7 @@ from device_certificate_report.components.data_collection import (
 )
 from device_certificate_report.components.report_generation import generate_report
 from device_certificate_report.components.utils import clean_csv
-from device_certificate_report.filters import (
+from device_certificate_report.components.filters import (
     filter_devices_by_model,
     split_devices_by_version,
 )

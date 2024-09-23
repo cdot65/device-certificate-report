@@ -1,4 +1,4 @@
-# device_certificate_report/version.py
+# device_certificate_report/components/version.py
 
 import re
 

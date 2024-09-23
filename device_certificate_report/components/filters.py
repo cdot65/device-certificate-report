@@ -1,13 +1,13 @@
-# device_certificate_report/filters.py
+# device_certificate_report/components/filters.py
 
 from typing import List, Tuple
-from device_certificate_report.config import (
+from device_certificate_report.components.config import (
     AffectedModels,
     UnaffectedModels,
     MinimumPatchedVersions,
 )
 from device_certificate_report.models.device import DeviceInfo
-from device_certificate_report.version import parse_version, Version
+from device_certificate_report.components.version import parse_version
 
 
 def is_affected_model(model: str) -> bool:

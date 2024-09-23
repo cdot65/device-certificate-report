@@ -1,7 +1,7 @@
-# device_certificate_report/config.py
+# device_certificate_report/components/config.py
 
 from typing import Dict, List, Set
-from device_certificate_report.version import Version
+from device_certificate_report.components.version import Version
 
 # Affected device families and models
 AffectedFamilies: Dict[str, List[str]] = {

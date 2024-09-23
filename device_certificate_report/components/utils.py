@@ -1,4 +1,4 @@
-# components/utils.py
+# device_certificate_report/components/utils.py
 
 import re
 import csv

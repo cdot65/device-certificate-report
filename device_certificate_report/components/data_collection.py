@@ -1,16 +1,12 @@
-# components/data_collection.py
+# device_certificate_report/components/data_collection.py
 
 import csv
-import xml.etree.ElementTree as ET
 import logging
 
 from typing import List
 
 from panos.panorama import Panorama
 from panos.firewall import Firewall
-from panos.errors import PanDeviceError
-
-from device_certificate_report.models.device import DeviceInfo
 
 logger = logging.getLogger(__name__)
 
