@@ -1,5 +1,5 @@
 [tool.poetry]
-name = "device_certificate_report"
+name = "device-certificate-report"
 version = "0.1.0"
 description = "A tool to generate device certificate reports from PAN-OS devices."
 authors = ["Calvin Remsburg <cremsburg.dev@gmail.com>"]
