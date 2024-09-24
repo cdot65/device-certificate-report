@@ -15,7 +15,7 @@ Before you begin, make sure you have a GitHub account and are familiar with Git 
 2. **Clone Your Fork:** Clone your fork to your local machine:
 
     ```bash
-    git clone https://github.com/cdot65/device-certificate-report.git
+    git clone https://github.com/yourusername/device-certificate-report.git
     cd device-certificate-report
     ```
 

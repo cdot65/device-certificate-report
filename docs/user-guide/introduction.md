@@ -8,7 +8,7 @@ The `device-certificate-report` CLI tool is designed to simplify the process of 
 
 Managing device certificates across a large network of firewalls can be complex and time-consuming. The `device-certificate-report` tool addresses these challenges by:
 
-- Retrieving and analyzing device information from Panorama or a CSV file.
+- Retrieving and analyzing device information from Panorama, individual firewalls, or a CSV file.
 - Identifying devices that require upgrades or certificate renewals.
 - Generating comprehensive reports on device certificate statuses.
 
@@ -16,18 +16,19 @@ Managing device certificates across a large network of firewalls can be complex 
 
 The `device-certificate-report` tool follows a straightforward workflow:
 
-1. **Data Collection**: Retrieve device information either from Panorama or from a provided CSV file.
+1. **Data Collection**: Retrieve device information from Panorama, individual firewalls, or from a provided CSV file.
 2. **Analysis**: Process the collected data to identify device statuses, required upgrades, and certificate information.
-3. **Report Generation**: Create detailed PDF and CSV reports with actionable insights.
+3. **Report Generation**: Create detailed PDF reports with actionable insights.
 
 ## Key Features
 
 `device-certificate-report` is equipped with several features for efficient certificate management and reporting:
 
-- **Comprehensive Device Analysis**: Analyzes firewall devices connected to Panorama or from a provided CSV file.
-- **Detailed Reporting**: Generates both PDF and CSV reports with critical device information.
+- **Multiple Data Sources**: Collect device information from Panorama appliances, individual firewalls, or CSV files.
+- **Comprehensive Device Analysis**: Analyzes firewall devices to determine upgrade requirements and certificate status.
+- **Detailed Reporting**: Generates detailed PDF reports with critical device information.
 - **Upgrade Recommendations**: Identifies devices requiring upgrades and specifies the appropriate version.
-- **Certificate Status Tracking**: Provides detailed information on device certificate statuses.
+- **Certificate Status Tracking**: Provides detailed information on device certificate statuses and expiry dates.
 - **User-Friendly CLI**: Utilizes Typer to create an intuitive command-line interface for easy interaction.
 
 ## Important Dates

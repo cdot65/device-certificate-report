@@ -72,4 +72,4 @@ $ pip install device-certificate-report
 
 ## Next Steps
 
-With `device-certificate-report` successfully installed in your virtual environment, the next step is to configure the library for use with your Panorama appliance or CSV file. Visit the [Python Execution Guide](execution.md) to learn how to set up and configure `device-certificate-report` for generating certificate reports.
+With `device-certificate-report` successfully installed in your virtual environment, the next step is to configure the library for use with your Panorama appliance, individual firewalls, or CSV file. Visit the [Python Execution Guide](execution.md) to learn how to set up and configure `device-certificate-report` for generating certificate reports.
