@@ -35,7 +35,6 @@ The `device-certificate-report` tool follows a straightforward workflow:
 
 The tool helps administrators prepare for crucial deadlines related to PAN-OS device certificates:
 
-- **November 18, 2024**: Deadline for User-ID and Terminal Server (TS) agent remediation.
 - **November 11, 2025**: New enforcement date for Device Certificate for Cloud-Delivered Security Services (CDSS).
 
 ## Affected Products and Services
@@ -43,10 +42,7 @@ The tool helps administrators prepare for crucial deadlines related to PAN-OS de
 The `device-certificate-report` tool is relevant for the following Palo Alto Networks products and services:
 
 - Next-Generation Firewalls (NGFW)
-- Panorama for NGFW management
 - Cloud Delivered Security Services (CDSS), including WildFire/Advanced WildFire, DNS Security, and URL/Advanced URL Filtering
-- User-ID using User-ID agents or Terminal Server agents
-- WF-500 and WF-500-B appliances
 
 ## Next Steps
 

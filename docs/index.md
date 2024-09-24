@@ -52,16 +52,12 @@ hide:
 
 ## Important Dates
 
-- **November 18, 2024**: Deadline for User-ID and Terminal Server (TS) agent remediation.
 - **November 11, 2025**: New enforcement date for Device Certificate for Cloud-Delivered Security Services (CDSS).
 
 ## Affected Products and Services
 
 - Next-Generation Firewalls (NGFW)
-- Panorama for NGFW management
 - Cloud Delivered Security Services (CDSS), including WildFire/Advanced WildFire, DNS Security, and URL/Advanced URL Filtering
-- User-ID using User-ID agents or Terminal Server agents
-- WF-500 and WF-500-B appliances
 
 ## Workflow
 
@@ -78,7 +74,7 @@ hide:
 <div class="termy">
 
 <!-- termynal -->
-```console
+```bash
 $ pip install device-certificate-report
 $ device-certificate-report --help
 Usage: device-certificate-report [OPTIONS] COMMAND [ARGS]...

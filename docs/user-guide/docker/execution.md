@@ -10,7 +10,7 @@ Pull the `device-certificate-report` image from GitHub Packages:
 
 <!-- termynal -->
 ```bash
-docker pull ghcr.io/cdot65/device-certificate-report:latest
+$ docker pull ghcr.io/cdot65/device-certificate-report:latest
 ```
 
 </div>
@@ -25,7 +25,7 @@ To run the container with interactive prompts:
 
 <!-- termynal -->
 ```bash
-docker run -it --rm ghcr.io/cdot65/device-certificate-report:latest
+$ docker run -it --rm ghcr.io/cdot65/device-certificate-report:latest
 ```
 
 </div>
@@ -38,7 +38,7 @@ For Panorama-based report generation:
 
 <!-- termynal -->
 ```bash
-docker run -it --rm \
+$ docker run -it --rm \
   -v "$(pwd)/output:/app/output" \
   ghcr.io/cdot65/device-certificate-report:latest \
   panorama --hostname <panorama_ip> --username <username> --password <password>
@@ -52,7 +52,7 @@ For CSV-based report generation:
 
 <!-- termynal -->
 ```bash
-docker run -it --rm \
+$ docker run -it --rm \
   -v "$(pwd)/input:/app/input" \
   -v "$(pwd)/output:/app/output" \
   ghcr.io/cdot65/device-certificate-report:latest \
@@ -76,7 +76,7 @@ The `device-certificate-report` Docker container supports various arguments to c
 
 <!-- termynal -->
 ```bash
-docker run ... panorama [OPTIONS]
+$ docker run ... panorama [OPTIONS]
 ```
 
 </div>
@@ -93,7 +93,7 @@ Options:
 
 <!-- termynal -->
 ```bash
-docker run ... csv [OPTIONS]
+$ docker run ... csv [OPTIONS]
 ```
 
 </div>
@@ -117,7 +117,7 @@ Options:
 
 <!-- termynal -->
 ```bash
-docker run -it --rm \
+$ docker run -it --rm \
   -v "$(pwd)/output:/app/output" \
   ghcr.io/cdot65/device-certificate-report:latest \
   panorama --hostname 192.168.1.1 --username admin --password admin123
@@ -131,7 +131,7 @@ docker run -it --rm \
 
 <!-- termynal -->
 ```bash
-docker run -it --rm \
+$ docker run -it --rm \
   -v "$(pwd)/input:/app/input" \
   -v "$(pwd)/output:/app/output" \
   ghcr.io/cdot65/device-certificate-report:latest \
