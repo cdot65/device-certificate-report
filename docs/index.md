@@ -1,8 +1,3 @@
----
-hide:
-    - navigation
----
-
 <style>
 .md-content .md-typeset h1 { display: none; }
 </style>
@@ -75,8 +70,7 @@ hide:
 
 `device-certificate-report` can be executed using Python in a virtual environment:
 
-<div class="termy">
-
+<!-- termynal -->
 ```console
 $ pip install device-certificate-report
 $ device-certificate-report --help
@@ -92,8 +86,6 @@ Commands:
   firewall  Connect to a Firewall appliance to retrieve device...
   panorama  Connect to a Panorama appliance to retrieve connected...
 ```
-
-</div>
 
 For more detailed usage instructions and examples, refer to the [User Guide](user-guide/introduction.md).
 
