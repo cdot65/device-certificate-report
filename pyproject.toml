@@ -3,11 +3,28 @@ name = "device-certificate-report"
 version = "0.1.0"
 description = "A tool to generate device certificate reports from PAN-OS devices."
 authors = ["Calvin Remsburg <cremsburg.dev@gmail.com>"]
+documentation = "https://cdot65.github.io/device-certificate-report/"
 license = "Apache 2.0"
 readme = "README.md"
-packages = [{include = "device_certificate_report"}]
+packages = [{ include = "device_certificate_report" }]
+keywords = ["paloaltonetworks", "panos", "firewall", "certificate", "report", "automation"]
+classifiers = [
+    "Development Status :: 4 - Beta",
+    "Framework :: Flake8",
+    "Framework :: Pydantic :: 2",
+    "Framework :: MkDocs",
+    "Intended Audience :: System Administrators",
+    "License :: OSI Approved :: Apache Software License",
+    "Natural Language :: English",
+    "Operating System :: OS Independent",
+    "Programming Language :: Python :: 3.12",
+    "Topic :: System :: Networking :: Firewalls",
+    "Topic :: Software Development :: Libraries :: Python Modules",
+    "Topic :: System :: Systems Administration",
+    "Topic :: Utilities",
+]
+include = ["device_certificate_report/assets/*.png", "device_certificate_report/assets/*.svg"]
 
-# pyproject.toml
 [tool.pytest.ini_options]
 filterwarnings = [
     "error",
@@ -28,6 +45,7 @@ reportlab = "^4.2.2"
 [tool.poetry.group.dev.dependencies]
 mkdocs = "^1.6.1"
 mkdocs-material = "^9.5.35"
+mkdocstrings = "^0.24.0"
 pytest = "^8.3.3"
 ipdb = "^0.13.13"
 black = "^24.8.0"
