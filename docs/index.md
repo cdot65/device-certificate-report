@@ -11,7 +11,7 @@ hide:
     <a href="https://paloaltonetworks.com"><img src="https://github.com/cdot65/device-certificate-report/blob/main/docs/images/logo.svg?raw=true" alt="PaloAltoNetworks"></a>
 </p>
 <p align="center">
-    <em><code>device-certificate-report</code>, Reporting on  PAN-OS Device Certificate Status</em>
+    <em><code>device-certificate-report</code>, Reporting on PAN-OS Device Certificate Status</em>
 </p>
 <p align="center">
 <a href="https://github.com/cdot65/device-certificate-report/graphs/contributors" target="_blank">
@@ -39,14 +39,15 @@ hide:
 
 ---
 
-`device-certificate-report` is designed to help customers navigate the complex landscape of PAN-OS device certificates. This tool retrieves a list of firewall devices connected to Panorama or ingests a .csv downloaded from Panorama's Device Summary page. The result is a comprehensive PDF and CSV report highlighting devices that are unaffected due to platform model, devices that require an upgrade (and which version to upgrade to), and device certificate status information.
+`device-certificate-report` is designed to help customers navigate the complex landscape of PAN-OS device certificates. This tool retrieves a list of firewall devices connected to Panorama, connects directly to a firewall, or ingests a CSV file downloaded from Panorama's Device Summary page. The result is a comprehensive PDF report highlighting devices that are unaffected due to platform model, devices that require an upgrade (and which version to upgrade to), and device certificate status information.
 
 ## Key Features
 
-- **Comprehensive Device Analysis**: Analyzes firewall devices connected to Panorama or from a provided CSV file.
-- **Detailed Reporting**: Generates both PDF and CSV reports with critical device information.
-- **Upgrade Recommendations**: Identifies devices requiring upgrades and specifies the appropriate version.
-- **Certificate Status Tracking**: Provides detailed information on device certificate statuses.
+- **Multiple Data Sources**: Collect device information from Panorama appliances, individual firewalls, or CSV files.
+- **Comprehensive Device Analysis**: Analyzes firewall devices to determine upgrade requirements and certificate status.
+- **Detailed Reporting**: Generates detailed PDF reports with critical device information.
+- **Upgrade Recommendations**: Identifies devices requiring upgrades and specifies the appropriate versions.
+- **Certificate Status Tracking**: Provides detailed information on device certificate statuses and expiry dates.
 - **User-Friendly CLI**: Utilizes Typer to create an intuitive command-line interface for easy interaction.
 
 ## Important Dates
@@ -64,9 +65,9 @@ hide:
 
 ## Workflow
 
-1. **Data Collection**: Retrieve device information from Panorama or input CSV file.
+1. **Data Collection**: Retrieve device information from Panorama, individual firewalls, or input CSV file.
 2. **Analysis**: Process the data to identify device statuses, required upgrades, and certificate information.
-3. **Report Generation**: Create detailed PDF and CSV reports with actionable insights.
+3. **Report Generation**: Create detailed PDF reports with actionable insights.
 
 ---
 
@@ -81,15 +82,15 @@ $ pip install device-certificate-report
 $ device-certificate-report --help
 Usage: device-certificate-report [OPTIONS] COMMAND [ARGS]...
 
-  Generate a report on device certificates for PAN-OS devices.
+  Generate Device Certificate Reports from PAN-OS Devices
 
 Options:
-  --version  Show the version and exit.
-  --help     Show this message and exit.
+  --help  Show this message and exit.
 
 Commands:
-  panorama  Generate report from Panorama.
-  csv       Generate report from CSV file.
+  csv       Load a CSV file to extract firewall information and generate...
+  firewall  Connect to a Firewall appliance to retrieve device...
+  panorama  Connect to a Panorama appliance to retrieve connected...
 ```
 
 </div>
@@ -104,4 +105,4 @@ Contributions are welcome and greatly appreciated. Visit the [Contributing](abou
 
 ## License
 
-This project is licensed under the MIT License - see the [License](about/license.md) page for details.
+This project is licensed under the Apache 2.0 License - see the [License](about/license.md) page for details.
