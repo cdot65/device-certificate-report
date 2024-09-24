@@ -6,6 +6,14 @@ Welcome to the release notes for the `device-certificate-report` tool. This docu
 
 - Includes all the features and functionalities as they were in the initial development build.
 
+## Version 0.1.1 in version 0.1.1
+
+**Release Date:** *<20240924>*
+
+### Introduction
+
+- Corrected path for Palo Alto Networks logo in README.
+
 ## Version 0.1.0 in version 0.1.0
 
 **Release Date:** *<20240919>*
