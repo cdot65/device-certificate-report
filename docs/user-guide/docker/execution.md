@@ -6,6 +6,7 @@ Run `device-certificate-report` in Docker for a consistent setup across systems.
 
 Pull the `device-certificate-report` image from GitHub Packages:
 
+<!-- termynal -->
 ```bash
 docker pull ghcr.io/cdot65/device-certificate-report:latest
 ```
@@ -16,6 +17,7 @@ docker pull ghcr.io/cdot65/device-certificate-report:latest
 
 To run the container with interactive prompts:
 
+<!-- termynal -->
 ```bash
 docker run -it --rm ghcr.io/cdot65/device-certificate-report:latest
 ```
@@ -24,6 +26,7 @@ docker run -it --rm ghcr.io/cdot65/device-certificate-report:latest
 
 For Panorama-based report generation:
 
+<!-- termynal -->
 ```bash
 docker run -it --rm \
   -v "$(pwd)/output:/app/output" \
@@ -33,6 +36,7 @@ docker run -it --rm \
 
 For CSV-based report generation:
 
+<!-- termynal -->
 ```bash
 docker run -it --rm \
   -v "$(pwd)/input:/app/input" \
@@ -52,6 +56,7 @@ The `device-certificate-report` Docker container supports various arguments to c
 
 ### Panorama Report Command
 
+<!-- termynal -->
 ```bash
 docker run ... panorama [OPTIONS]
 ```
@@ -64,6 +69,7 @@ Options:
 
 ### CSV Report Command
 
+<!-- termynal -->
 ```bash
 docker run ... csv [OPTIONS]
 ```
@@ -83,6 +89,7 @@ Options:
 
 ### Generating a Report from Panorama
 
+<!-- termynal -->
 ```bash
 docker run -it --rm \
   -v "$(pwd)/output:/app/output" \
@@ -92,6 +99,7 @@ docker run -it --rm \
 
 ### Generating a Report from CSV
 
+<!-- termynal -->
 ```bash
 docker run -it --rm \
   -v "$(pwd)/input:/app/input" \

@@ -8,6 +8,7 @@ This guide provides comprehensive steps for configuring and executing the `devic
 
 You can start the script interactively by simply issuing `device-certificate-report` from your current working directory. The interactive shell will prompt you to input the required arguments, including whether to generate a report from Panorama, a firewall, or a CSV file.
 
+<!-- termynal -->
 ```bash
 $ device-certificate-report
 ```
@@ -16,18 +17,21 @@ $ device-certificate-report
 
 For a more streamlined approach, you can provide all necessary arguments directly via the command line:
 
+<!-- termynal -->
 ```bash
 $ device-certificate-report panorama --hostname <panorama_ip> --username <username> --password <password>
 ```
 
 Or for CSV input:
 
+<!-- termynal -->
 ```bash
 $ device-certificate-report csv --csv-file <path_to_csv_file>
 ```
 
 Or to connect directly to a firewall:
 
+<!-- termynal -->
 ```bash
 $ device-certificate-report firewall --hostname <firewall_ip> --username <username> --password <password>
 ```
@@ -42,6 +46,7 @@ The `device-certificate-report` CLI supports various arguments to customize its 
 
 ### Panorama Report Command
 
+<!-- termynal -->
 ```bash
 $ device-certificate-report panorama [OPTIONS]
 ```
@@ -54,6 +59,7 @@ Options:
 
 ### Firewall Report Command
 
+<!-- termynal -->
 ```bash
 $ device-certificate-report firewall [OPTIONS]
 ```
@@ -66,6 +72,7 @@ Options:
 
 ### CSV Report Command
 
+<!-- termynal -->
 ```bash
 $ device-certificate-report csv [OPTIONS]
 ```
@@ -78,18 +85,21 @@ Options:
 
 ### Generating a Report from Panorama
 
+<!-- termynal -->
 ```bash
 $ device-certificate-report panorama --hostname 192.168.1.1 --username admin --password admin123 --output-file panorama_report.pdf
 ```
 
 ### Generating a Report from CSV
 
+<!-- termynal -->
 ```bash
 $ device-certificate-report csv --csv-file ./device_list.csv --output-file csv_report.pdf
 ```
 
 ### Generating a Report from a Firewall
 
+<!-- termynal -->
 ```bash
 $ device-certificate-report firewall --hostname 192.168.1.20 --username admin --password admin123 --output-file firewall_report.pdf
 ```
