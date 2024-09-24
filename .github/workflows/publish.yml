@@ -30,7 +30,7 @@ jobs:
 
     - name: Publish to GitHub Packages
       run: |
-        poetry config repositories.github "https://maven.pkg.github.com/cdot65/device-certificate-report"
-        poetry publish -r github --username cdot65 --password ${{ secrets.GITHUB_TOKEN }}
+        poetry config repositories.github "https://pypi.pkg.github.com/cdot65"
+        poetry publish -r github --username __token__ --password ${{ secrets.GITHUB_TOKEN }}
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
