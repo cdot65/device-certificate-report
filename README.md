@@ -1,6 +1,6 @@
 # PAN-OS Device Certificate Report
 
-![Banner Image](device_certificate_report/assets/logo.svg)
+![Banner Image](https://raw.githubusercontent.com/cdot65/device-certificate-report/refs/heads/main/device_certificate_report/assets/logo.svg)
 
 [![Build Status](https://github.com/cdot65/device-certificate-report/actions/workflows/ci.yml/badge.svg)](https://github.com/cdot65/device-certificate-report/actions/workflows/ci.yml)
 [![PyPI version](https://badge.fury.io/py/device-certificate-report.svg)](https://badge.fury.io/py/device-certificate-report)
