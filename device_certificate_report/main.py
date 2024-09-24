@@ -315,7 +315,9 @@ def firewall(
             devices_with_certificates=devices_with_certificates,
             output_file=output_file if len(output_file) > 0 else f"{hostname}.pdf",
         )
-        typer.echo(f"Report generated at {output_file if len(output_file) > 0 else f'{hostname}.pdf'}")
+        typer.echo(
+            f"Report generated at {output_file if len(output_file) > 0 else f'{hostname}.pdf'}"
+        )
     except Exception as e:
         logger.error(f"Failed to process Firewall: {e}")
         sys.exit(1)

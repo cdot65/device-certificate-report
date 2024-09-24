@@ -1,7 +1,10 @@
 # device_certificate_report/components/filters.py
 
 from typing import List, Tuple
-from device_certificate_report.config.hardware_families import AffectedModels, UnaffectedModels
+from device_certificate_report.config.hardware_families import (
+    AffectedModels,
+    UnaffectedModels,
+)
 from device_certificate_report.config.panos_versions import MinimumPatchedVersions
 from device_certificate_report.models.device import DeviceInfo
 from device_certificate_report.components.version import parse_version

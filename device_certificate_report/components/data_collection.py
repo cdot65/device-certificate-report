@@ -70,22 +70,26 @@ def process_csv_file(csv_file: str) -> List[DeviceInfo]:
                 device = DeviceInfo(
                     device_name=device_names[i] if i < len(device_names) else None,
                     model=model or None,
-                    serial_number=serial_numbers[i]
-                    if i < len(serial_numbers)
-                    else None,
+                    serial_number=(
+                        serial_numbers[i] if i < len(serial_numbers) else None
+                    ),
                     ipv4_address=ipv4_addresses[i] if i < len(ipv4_addresses) else None,
                     device_state=device_states[i] if i < len(device_states) else None,
-                    device_certificate=device_certificates[i]
-                    if i < len(device_certificates)
-                    else None,
-                    device_certificate_expiry_date=device_certificate_expiry_dates[i]
-                    if i < len(device_certificate_expiry_dates)
-                    else None,
+                    device_certificate=(
+                        device_certificates[i] if i < len(device_certificates) else None
+                    ),
+                    device_certificate_expiry_date=(
+                        device_certificate_expiry_dates[i]
+                        if i < len(device_certificate_expiry_dates)
+                        else None
+                    ),
                     software_version=software_version or None,
-                    globalprotect_client=globalprotect_clients[i]
-                    if i < len(globalprotect_clients)
-                    and globalprotect_clients[i] != "0.0.0"
-                    else None,
+                    globalprotect_client=(
+                        globalprotect_clients[i]
+                        if i < len(globalprotect_clients)
+                        and globalprotect_clients[i] != "0.0.0"
+                        else None
+                    ),
                 )
                 devices.append(device)
 
@@ -147,9 +151,9 @@ def collect_data_from_panorama(panorama: Panorama) -> List[DeviceInfo]:
                 device_certificate=device_certificate or "",
                 device_certificate_expiry_date=device_certificate_expiry_date or "",
                 software_version=software_version or "",
-                globalprotect_client=globalprotect_client
-                if globalprotect_client != "0.0.0"
-                else "",
+                globalprotect_client=(
+                    globalprotect_client if globalprotect_client != "0.0.0" else ""
+                ),
             )
             devices.append(device)
     except Exception as e:
@@ -256,8 +260,8 @@ def collect_data_from_firewall(firewall: Firewall) -> DeviceInfo:
         device_certificate=device_certificate_status or "",
         device_certificate_expiry_date=device_certificate_expiry_date or "",
         software_version=software_version or "",
-        globalprotect_client=globalprotect_client
-        if globalprotect_client != "0.0.0"
-        else "",
+        globalprotect_client=(
+            globalprotect_client if globalprotect_client != "0.0.0" else ""
+        ),
     )
     return device
