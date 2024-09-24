@@ -8,33 +8,49 @@ This guide provides comprehensive steps for configuring and executing the `devic
 
 You can start the script interactively by simply issuing `device-certificate-report` from your current working directory. The interactive shell will prompt you to input the required arguments, including whether to generate a report from Panorama, a firewall, or a CSV file.
 
+<div class="termy">
+
 <!-- termynal -->
 ```bash
 $ device-certificate-report
 ```
 
+</div>
+
 ### Executing With Command-Line Arguments
 
 For a more streamlined approach, you can provide all necessary arguments directly via the command line:
+
+<div class="termy">
 
 <!-- termynal -->
 ```bash
 $ device-certificate-report panorama --hostname <panorama_ip> --username <username> --password <password>
 ```
 
+</div>
+
 Or for CSV input:
+
+<div class="termy">
 
 <!-- termynal -->
 ```bash
 $ device-certificate-report csv --csv-file <path_to_csv_file>
 ```
 
+</div>
+
 Or to connect directly to a firewall:
+
+<div class="termy">
 
 <!-- termynal -->
 ```bash
 $ device-certificate-report firewall --hostname <firewall_ip> --username <username> --password <password>
 ```
+
+</div>
 
 ## Command-Line Arguments
 
@@ -46,10 +62,14 @@ The `device-certificate-report` CLI supports various arguments to customize its 
 
 ### Panorama Report Command
 
+<div class="termy">
+
 <!-- termynal -->
 ```bash
 $ device-certificate-report panorama [OPTIONS]
 ```
+
+</div>
 
 Options:
 - `--hostname TEXT`: Panorama IP address or hostname [optional]
@@ -59,10 +79,14 @@ Options:
 
 ### Firewall Report Command
 
+<div class="termy">
+
 <!-- termynal -->
 ```bash
 $ device-certificate-report firewall [OPTIONS]
 ```
+
+</div>
 
 Options:
 - `--hostname TEXT`: Firewall IP address or hostname [optional]
@@ -72,10 +96,14 @@ Options:
 
 ### CSV Report Command
 
+<div class="termy">
+
 <!-- termynal -->
 ```bash
 $ device-certificate-report csv [OPTIONS]
 ```
+
+</div>
 
 Options:
 - `--csv-file PATH`: Path to the input CSV file [optional]
@@ -85,24 +113,36 @@ Options:
 
 ### Generating a Report from Panorama
 
+<div class="termy">
+
 <!-- termynal -->
 ```bash
 $ device-certificate-report panorama --hostname 192.168.1.1 --username admin --password admin123 --output-file panorama_report.pdf
 ```
 
+</div>
+
 ### Generating a Report from CSV
+
+<div class="termy">
 
 <!-- termynal -->
 ```bash
 $ device-certificate-report csv --csv-file ./device_list.csv --output-file csv_report.pdf
 ```
 
+</div>
+
 ### Generating a Report from a Firewall
+
+<div class="termy">
 
 <!-- termynal -->
 ```bash
 $ device-certificate-report firewall --hostname 192.168.1.20 --username admin --password admin123 --output-file firewall_report.pdf
 ```
+
+</div>
 
 ## Output
 

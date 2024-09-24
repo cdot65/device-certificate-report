@@ -14,33 +14,52 @@ Before starting, make sure you have:
 
 The `device-certificate-report` Docker image is hosted on GitHub Packages. Pull the image using the following command:
 
+<div class="termy">
+
 <!-- termynal -->
 ```bash
 docker pull ghcr.io/cdot65/device-certificate-report:latest
 ```
+
+</div>
 
 ## Building the Docker Image
 
 As an alternative, if you would like to build the container yourself:
 
 1. Clone the repository:
+
+   <div class="termy">
+   
    <!-- termynal -->
    ```bash
    git clone https://github.com/cdot65/device-certificate-report.git
    cd device-certificate-report
    ```
+   
+   </div>
 
 2. Navigate to the `docker` directory:
+
+   <div class="termy">
+
    <!-- termynal -->
    ```bash
    cd docker
    ```
+   
+   </div>
 
 3. Build your custom image:
+
+   <div class="termy">
+
    <!-- termynal -->
    ```bash
    docker build -t device-certificate-report:custom .
    ```
+
+   </div>
 
 You can modify the Dockerfile to your liking before building.
 

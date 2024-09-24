@@ -6,10 +6,14 @@ Run `device-certificate-report` in Docker for a consistent setup across systems.
 
 Pull the `device-certificate-report` image from GitHub Packages:
 
+<div class="termy">
+
 <!-- termynal -->
 ```bash
 docker pull ghcr.io/cdot65/device-certificate-report:latest
 ```
+
+</div>
 
 ## Running the Container
 
@@ -17,14 +21,20 @@ docker pull ghcr.io/cdot65/device-certificate-report:latest
 
 To run the container with interactive prompts:
 
+<div class="termy">
+
 <!-- termynal -->
 ```bash
 docker run -it --rm ghcr.io/cdot65/device-certificate-report:latest
 ```
 
+</div>
+
 ### Executing with Command-Line Arguments
 
 For Panorama-based report generation:
+
+<div class="termy">
 
 <!-- termynal -->
 ```bash
@@ -34,7 +44,11 @@ docker run -it --rm \
   panorama --hostname <panorama_ip> --username <username> --password <password>
 ```
 
+</div>
+
 For CSV-based report generation:
+
+<div class="termy">
 
 <!-- termynal -->
 ```bash
@@ -44,6 +58,8 @@ docker run -it --rm \
   ghcr.io/cdot65/device-certificate-report:latest \
   csv --file /app/input/devices.csv
 ```
+
+</div>
 
 ## Command-Line Arguments
 
@@ -56,10 +72,14 @@ The `device-certificate-report` Docker container supports various arguments to c
 
 ### Panorama Report Command
 
+<div class="termy">
+
 <!-- termynal -->
 ```bash
 docker run ... panorama [OPTIONS]
 ```
+
+</div>
 
 Options:
 - `--hostname TEXT`: Panorama IP address or hostname [required]
@@ -69,10 +89,14 @@ Options:
 
 ### CSV Report Command
 
+<div class="termy">
+
 <!-- termynal -->
 ```bash
 docker run ... csv [OPTIONS]
 ```
+
+</div>
 
 Options:
 - `--file PATH`: Path to the input CSV file within the container [required]
@@ -89,6 +113,8 @@ Options:
 
 ### Generating a Report from Panorama
 
+<div class="termy">
+
 <!-- termynal -->
 ```bash
 docker run -it --rm \
@@ -97,7 +123,11 @@ docker run -it --rm \
   panorama --hostname 192.168.1.1 --username admin --password admin123
 ```
 
+</div>
+
 ### Generating a Report from CSV
+
+<div class="termy">
 
 <!-- termynal -->
 ```bash
@@ -107,6 +137,8 @@ docker run -it --rm \
   ghcr.io/cdot65/device-certificate-report:latest \
   csv --file /app/input/devices.csv
 ```
+
+</div>
 
 ## Output
 
