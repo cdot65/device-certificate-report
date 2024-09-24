@@ -25,8 +25,8 @@ Run the following command to create a new virtual environment named `cert_report
 <div class="termy">
 
 <!-- termynal -->
-```console
-python3 -m venv cert_report_env
+```bash
+$ python3 -m venv cert_report_env
 ```
 
 </div>
@@ -40,8 +40,8 @@ This creates a new directory named `cert_report_env` with a copy of the Python i
 <div class="termy">
 
 <!-- termynal -->
-```console
-cert_report_env\Scripts\activate
+```bash
+$ cert_report_env\Scripts\activate
 ```
 
 </div>
@@ -51,8 +51,8 @@ cert_report_env\Scripts\activate
 <div class="termy">
 
 <!-- termynal -->
-```console
-source cert_report_env/bin/activate
+```bash
+$ source cert_report_env/bin/activate
 ```
 
 </div>
@@ -66,10 +66,10 @@ Within the activated environment, install the package using pip:
 <div class="termy">
 
 <!-- termynal -->
-```console
+```bash
 $ pip install device-certificate-report
-
 ---> 100%
+Successfully device-certificate-report
 ```
 
 </div>

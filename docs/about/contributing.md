@@ -18,9 +18,10 @@ Before you begin, make sure you have a GitHub account and are familiar with Git 
 
     <!-- termynal -->
     ```bash
-    git clone https://github.com/yourusername/device-certificate-report.git
+    $ git clone https://github.com/yourusername/device-certificate-report.git
     cd device-certificate-report
     ```
+
    </div>
 
 3. **Create a Branch:** Create a new branch for your feature, fix, or improvement:
@@ -29,7 +30,7 @@ Before you begin, make sure you have a GitHub account and are familiar with Git 
 
     <!-- termynal -->
     ```bash
-    git checkout -b feature/YourFeatureName
+    $ git checkout -b feature/YourFeatureName
     ```
 
    </div>
@@ -50,7 +51,7 @@ Before you begin, make sure you have a GitHub account and are familiar with Git 
 
     <!-- termynal -->
     ```bash
-    git commit -am "Add some AmazingFeature"
+    $ git commit -am "Add some AmazingFeature"
     ```
 
    </div>
@@ -65,7 +66,7 @@ Before you begin, make sure you have a GitHub account and are familiar with Git 
 
     <!-- termynal -->
     ```bash
-    git push origin feature/YourFeatureName
+    $ git push origin feature/YourFeatureName
     ```
    
    </div>

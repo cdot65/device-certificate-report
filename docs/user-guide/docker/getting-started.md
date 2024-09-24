@@ -18,7 +18,7 @@ The `device-certificate-report` Docker image is hosted on GitHub Packages. Pull 
 
 <!-- termynal -->
 ```bash
-docker pull ghcr.io/cdot65/device-certificate-report:latest
+$ docker pull ghcr.io/cdot65/device-certificate-report:latest
 ```
 
 </div>
@@ -33,8 +33,8 @@ As an alternative, if you would like to build the container yourself:
    
    <!-- termynal -->
    ```bash
-   git clone https://github.com/cdot65/device-certificate-report.git
-   cd device-certificate-report
+   $ git clone https://github.com/cdot65/device-certificate-report.git
+   $ cd device-certificate-report
    ```
    
    </div>
@@ -45,7 +45,7 @@ As an alternative, if you would like to build the container yourself:
 
    <!-- termynal -->
    ```bash
-   cd docker
+   $ cd docker
    ```
    
    </div>
@@ -56,7 +56,7 @@ As an alternative, if you would like to build the container yourself:
 
    <!-- termynal -->
    ```bash
-   docker build -t device-certificate-report:custom .
+   $ docker build -t device-certificate-report:custom .
    ```
 
    </div>

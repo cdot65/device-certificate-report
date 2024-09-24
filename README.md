@@ -38,7 +38,9 @@ Requires Python 3.7 or higher.
 Install the package using pip:
 
 ```bash
-pip install device-certificate-report
+$ pip install device-certificate-report
+---> 100%
+Successfully installed device-certificate-report
 ```
 
 ## Usage
@@ -54,10 +56,10 @@ The `device-certificate-report` utility provides three subcommands:
 Process a CSV file to generate the report.
 
 ```bash
-device-certificate-report csv --csv-file <path_to_csv_file> --output-file <output_pdf>
+$ device-certificate-report csv --csv-file <path_to_csv_file> --output-file <output_pdf>
 ```
 
-> the `--csv-file` and `--output-file` flags are optional
+* `--csv-file` and `--output-file` flags are optional*
 
 **Examples:**
 
@@ -81,10 +83,10 @@ Report generated at device_certificate_report.pdf
 Connect to a Panorama appliance and generate the report from connected firewalls.
 
 ```bash
-device-certificate-report panorama --hostname <panorama_ip> --username <user> --password <password> --output-file <output_pdf>
+$ device-certificate-report panorama --hostname <panorama_ip> --username <user> --password <password> --output-file <output_pdf>
 ```
 
-> the `--hostname`, `--username`, `--password`, and `--output-file` flags are optional
+* `--hostname`, `--username`, `--password`, and `--output-file` flags are optional*
 
 
 **Examples:**
@@ -115,7 +117,7 @@ Report generated at panorama_report.pdf
 Connect to a single Firewall appliance and generate the report.
 
 ```bash
-device-certificate-report firewall --hostname <firewall_ip> --username <user> --password <password> --output-file <output_pdf>
+$ device-certificate-report firewall --hostname <firewall_ip> --username <user> --password <password> --output-file <output_pdf>
 ```
 
 **Examples:**
