@@ -14,6 +14,7 @@ Before you begin, make sure you have a GitHub account and are familiar with Git 
 
 2. **Clone Your Fork:** Clone your fork to your local machine:
 
+    <!-- termynal -->
     ```bash
     git clone https://github.com/yourusername/device-certificate-report.git
     cd device-certificate-report
@@ -21,6 +22,7 @@ Before you begin, make sure you have a GitHub account and are familiar with Git 
 
 3. **Create a Branch:** Create a new branch for your feature, fix, or improvement:
 
+    <!-- termynal -->
     ```bash
     git checkout -b feature/YourFeatureName
     ```
@@ -37,6 +39,7 @@ Before you begin, make sure you have a GitHub account and are familiar with Git 
 
 3. **Commit Your Changes:** Once you're happy with your changes, commit them:
 
+    <!-- termynal -->
     ```bash
     git commit -am "Add some AmazingFeature"
     ```
@@ -47,6 +50,7 @@ Before you begin, make sure you have a GitHub account and are familiar with Git 
 
 1. **Push to Your Fork:** Push your branch to your GitHub fork:
 
+    <!-- termynal -->
     ```bash
     git push origin feature/YourFeatureName
     ```
