@@ -1,10 +1,10 @@
-# panos_device_certificate_report/components/filters.py
+# device_certificate_report/components/filters.py
 
 from typing import List, Tuple
-from panos_device_certificate_report.config.hardware_families import AffectedModels, UnaffectedModels
-from panos_device_certificate_report.config.panos_versions import MinimumPatchedVersions
-from panos_device_certificate_report.models.device import DeviceInfo
-from panos_device_certificate_report.components.version import parse_version
+from device_certificate_report.config.hardware_families import AffectedModels, UnaffectedModels
+from device_certificate_report.config.panos_versions import MinimumPatchedVersions
+from device_certificate_report.models.device import DeviceInfo
+from device_certificate_report.components.version import parse_version
 
 
 def is_affected_model(model: str) -> bool:

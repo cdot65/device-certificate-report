@@ -1,4 +1,4 @@
-# panos_device_certificate_report/components/data_collection.py
+# device_certificate_report/components/data_collection.py
 
 import csv
 import logging
@@ -10,7 +10,7 @@ from panos.firewall import Firewall
 
 logger = logging.getLogger(__name__)
 
-from panos_device_certificate_report.models.device import DeviceInfo
+from device_certificate_report.models.device import DeviceInfo
 
 
 def process_csv_file(csv_file: str) -> List[DeviceInfo]:

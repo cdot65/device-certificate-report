@@ -1,4 +1,4 @@
-# panos_device_certificate_report/main.py
+# device_certificate_report/main.py
 
 """
 main.py: Generate Device Certificate Reports from PAN-OS Devices
@@ -25,9 +25,9 @@ Usage
 
 Run the CLI utility with one of the subcommands:
 
-    panos-device-certificate-report csv
-    panos-device-certificate-report panorama --hostname <panorama_ip> --username <user> --password <password>
-    panos-device-certificate-report firewall --hostname <firewall_ip> --username <user> --password <password>
+    device-certificate-report csv
+    device-certificate-report panorama --hostname <panorama_ip> --username <user> --password <password>
+    device-certificate-report firewall --hostname <firewall_ip> --username <user> --password <password>
 
 Notes
 -----
@@ -42,34 +42,24 @@ from pathlib import Path
 from typing import Optional
 
 import typer
-from dynaconf import Dynaconf
 from panos.firewall import Firewall
 from panos.panorama import Panorama
 
 # Import components
-from panos_device_certificate_report.components.data_collection import (
+from device_certificate_report.components.data_collection import (
     process_csv_file,
     collect_data_from_panorama,
     collect_data_from_firewall,
 )
-from panos_device_certificate_report.utilities.pdf_generation import generate_report
-from panos_device_certificate_report.utilities.cleaner import clean_csv
-from panos_device_certificate_report.utilities.filters import (
+from device_certificate_report.utilities.pdf_generation import generate_report
+from device_certificate_report.utilities.cleaner import clean_csv
+from device_certificate_report.utilities.filters import (
     filter_devices_by_model,
     split_devices_by_version,
 )
 
 # Initialize Typer app
 app = typer.Typer(help="Generate Device Certificate Reports from PAN-OS Devices")
-
-# Define the path to the settings file
-SETTINGS_FILE_PATH = Path.cwd() / "settings.yaml"
-
-# Initialize Dynaconf settings object conditionally based on the existence of settings.yaml
-if SETTINGS_FILE_PATH.exists():
-    SETTINGS_FILE = Dynaconf(settings_files=[str(SETTINGS_FILE_PATH)])
-else:
-    SETTINGS_FILE = Dynaconf()
 
 # Set up logging
 logging.basicConfig(level=logging.INFO)
@@ -87,7 +77,7 @@ def csv(
         prompt="CSV file path",
     ),
     output_file: Optional[str] = typer.Option(
-        "panos_device_certificate_report.pdf",
+        "device_certificate_report.pdf",
         "--output-file",
         "-o",
         help="Path to the output PDF report",
@@ -177,7 +167,7 @@ def panorama(
         hide_input=True,
     ),
     output_file: Optional[str] = typer.Option(
-        "panos_device_certificate_report.pdf",
+        "device_certificate_report.pdf",
         "--output-file",
         "-o",
         help="Path to the output PDF report",

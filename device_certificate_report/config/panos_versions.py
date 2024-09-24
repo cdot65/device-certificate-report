@@ -1,7 +1,7 @@
-# panos_device_certificate_report/components/panos_versions.py
+# device_certificate_report/components/panos_versions.py
 
 from typing import Dict, List
-from panos_device_certificate_report.components.version import Version
+from device_certificate_report.components.version import Version
 
 # Minimum patched versions for each PAN-OS feature release
 MinimumPatchedVersions: Dict[str, List[Version]] = {

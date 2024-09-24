@@ -1,7 +1,7 @@
-# panos_device_certificate_report/components/pdf_generation.py
+# device_certificate_report/components/pdf_generation.py
 
 from typing import List
-from panos_device_certificate_report.models.device import DeviceInfo
+from device_certificate_report.models.device import DeviceInfo
 from reportlab.platypus import (
     SimpleDocTemplate,
     Paragraph,
@@ -34,7 +34,7 @@ def generate_report(
 
     # Optional: Include a logo if available
     try:
-        logo_path = pkg_resources.files("panos_device_certificate_report.assets").joinpath(
+        logo_path = pkg_resources.files("device_certificate_report.assets").joinpath(
             "logo.png"
         )
         img = Image(str(logo_path), width=71, height=51)

@@ -1,4 +1,4 @@
-# panos_device_certificate_report/components/__init__.py
+# device_certificate_report/components/__init__.py
 
 from .data_collection import (
     process_csv_file,

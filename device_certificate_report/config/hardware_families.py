@@ -1,4 +1,4 @@
-# panos_device_certificate_report/components/hardware_families.py
+# device_certificate_report/components/hardware_families.py
 
 from typing import Dict, List, Set
 
