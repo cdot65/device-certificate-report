@@ -15,6 +15,8 @@ $ docker pull ghcr.io/cdot65/device-certificate-report:latest
 
 </div>
 
+Or build your own custom version of the Dockerfile [in this getting started guide](./getting-started.md).
+
 ## Running the Container
 
 ### Basic Execution
@@ -39,7 +41,7 @@ For Panorama-based report generation:
 <!-- termynal -->
 ```bash
 $ docker run -it --rm \
-  -v "$(pwd)/output:/app/output" \
+  -v "$(pwd):/app" \
   ghcr.io/cdot65/device-certificate-report:latest \
   panorama --hostname <panorama_ip> --username <username> --password <password>
 ```
@@ -53,10 +55,9 @@ For CSV-based report generation:
 <!-- termynal -->
 ```bash
 $ docker run -it --rm \
-  -v "$(pwd)/input:/app/input" \
-  -v "$(pwd)/output:/app/output" \
+  -v "$(pwd):/app" \
   ghcr.io/cdot65/device-certificate-report:latest \
-  csv --file /app/input/devices.csv
+  csv --file /app/devices.csv
 ```
 
 </div>
@@ -103,11 +104,8 @@ Options:
 
 ## Volume Mounts
 
-- Mount an output directory to save generated reports:
-  `-v "$(pwd)/output:/app/output"`
-
-- For CSV input, mount an input directory:
-  `-v "$(pwd)/input:/app/input"`
+- Mount your local directory to import local files and export generated reports:
+  `-v "$(pwd):/app"`
 
 ## Examples
 
@@ -118,7 +116,7 @@ Options:
 <!-- termynal -->
 ```bash
 $ docker run -it --rm \
-  -v "$(pwd)/output:/app/output" \
+  -v "$(pwd):/app" \
   ghcr.io/cdot65/device-certificate-report:latest \
   panorama --hostname 192.168.1.1 --username admin --password admin123
 ```
@@ -132,17 +130,16 @@ $ docker run -it --rm \
 <!-- termynal -->
 ```bash
 $ docker run -it --rm \
-  -v "$(pwd)/input:/app/input" \
-  -v "$(pwd)/output:/app/output" \
+  -v "$(pwd):/app" \
   ghcr.io/cdot65/device-certificate-report:latest \
-  csv --file /app/input/devices.csv
+  csv --file /app/panorama.csv
 ```
 
 </div>
 
 ## Output
 
-The generated reports (PDF and CSV) will be available in the mounted output directory on your host system.
+The generated reports (PDF and CSV) will be available in the mounted directory on your host system.
 
 ## Troubleshooting
 
