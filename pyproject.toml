@@ -7,6 +7,15 @@ license = "Apache 2.0"
 readme = "README.md"
 packages = [{include = "device_certificate_report"}]
 
+# pyproject.toml
+[tool.pytest.ini_options]
+filterwarnings = [
+    "error",
+    "ignore::DeprecationWarning:",
+    # note the use of single quote below to denote "raw" strings in TOML
+    'ignore:ast.NameConstant is deprecated and will be removed in Python 3.14; use ast.Constant instead',
+]
+
 [tool.poetry.dependencies]
 python = "^3.12"
 pan-os-python = "^1.12.1"
