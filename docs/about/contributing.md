@@ -14,19 +14,26 @@ Before you begin, make sure you have a GitHub account and are familiar with Git 
 
 2. **Clone Your Fork:** Clone your fork to your local machine:
 
+   <div class="termy">
+
     <!-- termynal -->
     ```bash
     git clone https://github.com/yourusername/device-certificate-report.git
     cd device-certificate-report
     ```
+   </div>
 
 3. **Create a Branch:** Create a new branch for your feature, fix, or improvement:
+
+   <div class="termy">
 
     <!-- termynal -->
     ```bash
     git checkout -b feature/YourFeatureName
     ```
 
+   </div>
+   
 4. **Set Up the Development Environment:** Follow the [Getting Started](../user-guide/python/getting-started.md) guide to set up your local development environment.
 
 ---
@@ -39,10 +46,14 @@ Before you begin, make sure you have a GitHub account and are familiar with Git 
 
 3. **Commit Your Changes:** Once you're happy with your changes, commit them:
 
+   <div class="termy">
+
     <!-- termynal -->
     ```bash
     git commit -am "Add some AmazingFeature"
     ```
+
+   </div>
 
 ---
 
@@ -50,10 +61,14 @@ Before you begin, make sure you have a GitHub account and are familiar with Git 
 
 1. **Push to Your Fork:** Push your branch to your GitHub fork:
 
+   <div class="termy">
+
     <!-- termynal -->
     ```bash
     git push origin feature/YourFeatureName
     ```
+   
+   </div>
 
 2. **Create a Pull Request:** Go to the original `device-certificate-report` repository on GitHub and create a new pull request. Provide a clear description of your changes and any relevant issue numbers.
 
