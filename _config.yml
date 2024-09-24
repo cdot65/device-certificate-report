@@ -24,4 +24,3 @@ exclude:
   - "*.toml"
   - "LICENSE"
   - "poetry.lock"
-  - "requirements.txt"
