@@ -11,6 +11,7 @@ theme:
     - navigation.instant
 plugins:
   - search
+  - termynal
   - mkdocstrings:
       handlers:
         python:
