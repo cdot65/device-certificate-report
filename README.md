@@ -33,7 +33,7 @@ This tool assists customers in navigating the information provided within [this 
 
 ## Installation
 
-Requires Python 3.7 or higher.
+Requires Python 3.10 or higher.
 
 Install the package using pip:
 

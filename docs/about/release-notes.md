@@ -6,6 +6,14 @@ Welcome to the release notes for the `device-certificate-report` tool. This docu
 
 - Includes all the features and functionalities as they were in the initial development build.
 
+## Version 0.1.2
+
+**Release Date:** *<20241002>*
+
+### Python Version
+
+- Reduced the requirement on Python3.12 to 3.10.
+
 ## Version 0.1.1 in version 0.1.1
 
 **Release Date:** *<20240924>*
